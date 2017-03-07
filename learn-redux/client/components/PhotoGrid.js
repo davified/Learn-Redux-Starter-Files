@@ -5,8 +5,8 @@ const Single = React.createClass({
   render () {
     return (
       <div className='photo-grid'>
-        {this.props.posts.map((post, index) =>
-          <Photo {...this.props} key={index} index={index} post={post}/>
+        {this.props.posts.map((post, i) =>
+          <Photo {...this.props} key={i} i={i} post={post}/>
         )}
       </div>
     )

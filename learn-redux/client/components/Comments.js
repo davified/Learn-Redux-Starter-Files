@@ -13,11 +13,20 @@ const Comments = React.createClass({
     )
   },
 
+	handleSubmit(e) {
+		e.preventDefault();
+		// getting the form data using refs
+		const postId = this.props.params.postId
+		const author = this.refs.author.value
+		const comment = this.refs.comment.value
+		this.props.addComment(postId, author, comment)
+	},
+
   render () {
     return (
       <div>
         {this.props.postComments.map(this.renderComment)}
-				<form ref="commentForm" className="comment-form">
+				<form ref="commentForm" className="comment-form" onSubmit={this.handleSubmit}>
 					<input type="text" ref="author" placeholder="author"/>
 					<input type="text" ref="comment" placeholder="comment"/>
 					<input type="submit" hidden/>

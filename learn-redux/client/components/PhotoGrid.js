@@ -1,7 +1,7 @@
 import React from 'react'
 import Photo from './Photo'
 
-const Single = React.createClass({
+const PhotoGrid = React.createClass({
   render () {
     return (
       <div className='photo-grid'>
@@ -13,4 +13,4 @@ const Single = React.createClass({
   }
 })
 
-export default Single
+export default PhotoGrid

@@ -1,6 +1,7 @@
 import React from 'react' // react is coming from node_modules
 import {render} from 'react-dom'
-import Main from './components/Main'
+// import Main from './components/Main' //replace Main with App
+import App from './components/App'
 import Single from './components/Single'
 import PhotoGrid from './components/PhotoGrid'
 
@@ -20,7 +21,7 @@ const router = (
 	{/* version 1: just plain routers that load React components, without redux functionality */}
   {/* <Router history={browserHistory}> */}
   <Router history={history}>
-    <Route path='/' component={Main}>
+    <Route path='/' component={App}>
       <IndexRoute component={PhotoGrid} />
       <Route path='/view/:postId' component={Single} />
     </Route>

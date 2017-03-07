@@ -9,7 +9,7 @@ const Main = React.createClass({
     return (
       <div>
         <h1><Link to="/">Reduxstagram</Link></h1>
-				{/* clone element for routing purposes - see Video 4 */}
+				{/* this cloneElement() method passes down props from Main to its first child */}
 				{React.cloneElement(this.props.children, this.props)}
       </div>
     )

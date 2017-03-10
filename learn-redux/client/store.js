@@ -16,8 +16,12 @@ const defaultState = {
   comments
 }
 
+const enhancers = compose(
+  window.devToolsExtension ? window.devToolsExtension() : f => f
+)
+
 // creating a store using Redux's createStore method, which takes in 2 arguments - the rootReducer and the defaultState
-const store = createStore(rootReducer, defaultState)
+const store = createStore(rootReducer, defaultState, enhancers)
 
 // export method 1 : 'named export'. when we import this in another file, we need wrap it in curly braces import {history}...
 export const history = syncHistoryWithStore(browserHistory, store)
